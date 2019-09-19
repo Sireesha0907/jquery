@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            ToggleBoxes
+        </title>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        div{
+            border:solid 2px;
+            height:50px;
+            width:50px;
+        }
+    </style>
+    <body>
+        <div id="box1" class="outlined"></div><br>
+        <div id="box2" class="outlined"></div><br>
+        <div id="box3" class="outlined"></div>
+        <p></p>
+    <button type="button" id="but1">toggle color</button>
+    <button type="button" id="but2">toggle rounded borders</button>
+    <button type="button" id="but3">add a new box</button>        
+    </body>
+    <script>
+        $(document).ready(function(){
+      $("#but1").click(function(){
+          var color=["red","yellow","orange","green","black"]
+          $("div").each(function(){
+              var newcolor=color[Math.floor(color.length*Math.random())]
+              $(this).css("background-color",newcolor)
+          });
+
+      })
+      $("#but2").click(function(){
+          $("div").each(function(){
+              $(this).css("border-radius","100%")
+          })
+      })
+      $("#but3").click(function(){
+          $("p").append("<div></div><br>")
+
+      })
+
+  })
+    
+    </script>
+</html>
