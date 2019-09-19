@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Canvas</title>
+    </head>
+    <body>
+        <canvas id="my" width="500" height="500"></canvas>
+        <button id="1" onclick='ro()'>Rotate</button>
+    </body>
+    <script>
+        var canvasElement=document.querySelector("#my");
+        var context = canvasElement.getContext("2d");
+    
+        function ro(){
+    context.beginPath();
+    context.moveTo(100,100);
+    context.lineTo(100,300);
+    context.lineTo(300,300);
+    context.closePath();
+    context.lineWidth = 10;
+    context.strokeStyle = '#666666';
+    context.stroke();
+    context.restore();
+    context.rotate(Math.PI/180);
+    context.translate(-canvasWidth/2,-canvasWidth/2);
+    context.clearRect(0,0,canvas.width,canvas.height);
+        }
+</script>
+</html>
